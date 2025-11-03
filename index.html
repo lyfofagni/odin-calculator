@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Calculator HTML Structure -->
+    <div class="calculator">
+        <input type="text" id="display" value="" readonly placeholder="0">
+        
+        <div class="buttons">
+            <!-- Row 1 -->
+            <button class="btn-clear" onclick="clearDisplay()">C</button>
+            <button class="btn-operator" onclick="appendValue('/')">&divide;</button>
+            <button class="btn-operator" onclick="appendValue('*')">&times;</button>
+
+            <!-- Row 2 -->
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button class="btn-operator" onclick="appendValue('-')">&minus;</button>
+
+            <!-- Row 3 -->
+            <button onclick="appendValue('4')">4</button>
+            <button onclick="appendValue('5')">5</button>
+            <button onclick="appendValue('6')">6</button>
+            <button class="btn-operator" onclick="appendValue('+')">&plus;</button>
+
+            <!-- Row 4 -->
+            <button onclick="appendValue('1')">1</button>
+            <button onclick="appendValue('2')">2</button>
+            <button onclick="appendValue('3')">3</button>
+            <button class="btn-equals" onclick="calculateResult()">=</button>
+
+            <!-- Row 5 (Combined with Row 4) -->
+            <button class="btn-zero" style="grid-column: span 2;" onclick="appendValue('0')">0</button>
+            <button onclick="appendValue('.')">.</button>
+            <!-- The equals button from Row 4 spans here -->
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <!-- 'defer' ensures the HTML is parsed before the script runs -->
+    <script src="script.js" defer></script>
+</body>
+</html>
