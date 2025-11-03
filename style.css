@@ -1,0 +1,108 @@
+/* --- Start of CSS --- */
+:root {
+    /* New Dark Mode Palette */
+    --bg-color: #1a1a1a;
+    --calculator-bg: #2b2b2b;
+    --display-bg: #222222;
+    --display-text: #f5f5f5;
+    --button-bg: #4f4f4f;
+    --button-hover-bg: #6a6a6a;
+    --button-text: #f5f5f5;
+    --operator-bg: #007bff;
+    --operator-hover-bg: #3395ff;
+    --clear-bg: #d9534f;
+    --clear-hover-bg: #e06c68;
+    --equals-bg: #5cb85c;
+    --equals-hover-bg: #6fd16f;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --gutter-color: #222222;
+}
+
+body {
+    font-family: 'Inter', 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.calculator {
+    background-color: var(--calculator-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    width: 100%;
+    max-width: 340px;
+}
+
+#display {
+    background-color: var(--display-bg);
+    color: var(--display-text);
+    font-size: 2.5rem;
+    font-weight: 300;
+    padding: 20px;
+    text-align: right;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    /* Prevent user from typing directly */
+    readonly: true; 
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px; /* Creates thin lines between buttons */
+    background-color: var(--gutter-color); /* Gutter color */
+}
+
+button {
+    background-color: var(--button-bg);
+    border: none;
+    color: var(--button-text); /* Changed from #333 */
+    font-size: 1.5rem;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Span clear button across 2 columns */
+.btn-clear {
+    grid-column: span 2;
+    background-color: var(--clear-bg);
+    color: white;
+}
+.btn-clear:hover {
+    background-color: var(--clear-hover-bg);
+}
+
+/* Span equals button across 2 columns */
+.btn-equals {
+    grid-column: span 2;
+    background-color: var(--equals-bg);
+    color: white;
+}
+.btn-equals:hover {
+    background-color: var(--equals-hover-bg);
+}
+
+.btn-operator {
+    background-color: var(--operator-bg);
+    color: white;
+}
+.btn-operator:hover {
+    background-color: var(--operator-hover-bg);
+}
+/* --- End of CSS --- */
